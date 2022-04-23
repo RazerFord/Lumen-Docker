@@ -41,6 +41,13 @@ services:
     networks:
       - internal
 
+  composer:
+    image: composer:2.1.12
+    working_dir: /comp
+    volumes:
+      - "./:/comp"
+    command: composer install --ignore-platform-reqs
+
 networks:
   internal:
     driver: bridge
